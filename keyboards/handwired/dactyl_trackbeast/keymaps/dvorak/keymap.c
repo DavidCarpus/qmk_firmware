@@ -23,54 +23,47 @@
 #define RAISE MO(_RAISE)
 #define LOWER MO(_LOWER)
 
+// Thelios: /home/dcarpus/Code/home/Keyboard/qmk_firmware/keyboards/handwired/dactyl_manuform/5x7/keymaps/left/keymap.c
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    /* Base (qwerty)
+    /* Base (dvorak)
      * +-----------------------------------------+                             +-----------------------------------------+
      * | ESC  |   '  |   ,  |   .  |   p  |   y  |                             |   f  |   g  |   c  |   r  |   l  |      |
      * |------+------+------+------+------+------|                             |------+------+------+------+------+------|
      * | TAB  |   a  |   o  |   e  |   u  |   i  |                             |   d  |   h  |   t  |   n  |   s  |      |
      * |------+------+------+------+------+------|                             |------+------+------+------+------+------|
-     * | SHFT |   ;  |   q  |   j  |   k  |   x  |                             |   b  |   m  |   w  |   v  |   z  | SHFT |
+     * | SHFT |   z  |   x  |   c  |   v  |   b  |                             |   b  |   m  |   w  |   v  |   z  | SHFT |
      * +------+------+------+------+-------------+                             +-------------+------+------+------+------+
-     *               |  [   |   ]  |                                                         |      |      |
+     *               |  [   |   ]  | RAISE| SPC  |                                           | PLUS | EQL  |
      *               +-------------+-------------+                             +-------------+-------------+
-     *                             |      |      |                             |      |      |
+     *                             |  GRV | HOME |                             | END  | DEL  |
      *                             |------+------|                             |------+------|
-     *                             |      |      |                             |      |      |
+     *                             | BACK | TAB  |                             | LGUI | LALT |
      *                             +-------------+                             +-------------+
-     *                                           +-------------+ +-------------+
-     *                                           |      |      | |      |      |
-     *                                           |------+------| |------+------|
-     *                                           |      |      | |      |      |
-     *                                           +-------------+ +-------------+
      */
-    [_BASE] = LAYOUT_5x6(
-        KC_ESC,  KC_QUOTE, KC_COMM,    KC_DOT,    KC_P,    KC_Y,          KC_F,    KC_G,    KC_C,    KC_R,   KC_L,    KC_MINS,
+    [_BASE] = LAYOUT_ortho5x6(
+        KC_ESC,  KC_QUOTE, KC_COMM, KC_DOT,  KC_P,    KC_Y,               KC_F,    KC_G,    KC_C,    KC_R,   KC_L,    KC_MINS,
         KC_TAB,  KC_A,     KC_O,    KC_E,    KC_U,    KC_I,               KC_D,    KC_H,    KC_T,    KC_N,   KC_SCLN, KC_QUOT,
         KC_LSFT, KC_Z,     KC_X,    KC_C,    KC_V,    KC_B,               KC_B,    KC_M,    KC_W,    KC_V,   SFT_SEMI, KC_BSLS,
-                           KC_LBRC, KC_RBRC,                                                KC_PLUS, KC_EQL,
-                                            RAISE,   KC_SPC,             KC_ENT,  LOWER,
-                                            KC_TAB,  KC_HOME,            KC_END,  KC_DEL,
-                                            KC_BSPC, KC_GRV,             KC_LGUI, KC_LALT
+                           KC_LBRC, KC_RBRC, RAISE,   KC_SPC,                               KC_PLUS, KC_EQL,
+                                            KC_GRV,  KC_HOME,             KC_END,  KC_DEL,
+                                            KC_BSPC, KC_TAB,              KC_LGUI, KC_LALT
     ),
 
-    [_LOWER] = LAYOUT_5x6(
+    [_LOWER] = LAYOUT_ortho5x6(
         _______, _______, _______, _______, _______, KC_LBRC,             KC_RBRC, KC_P7,   KC_P8,   KC_P9,   QK_BOOT,   KC_PLUS,
         _______, KC_HOME, KC_PGUP, KC_PGDN, KC_END , KC_LPRN,             KC_RPRN, KC_P4,   KC_P5,   KC_P6,   KC_MINS, KC_PIPE,
         _______, _______, _______, _______, _______, _______,             _______, KC_P1,   KC_P2,   KC_P3,   KC_EQL,  KC_UNDS,
-                          _______, KC_PSCR,                                                 _______, KC_P0,
-                                            _______, _______,             _______, _______,
+                          _______, KC_PSCR, _______, _______,                               _______, KC_P0,
                                             _______, _______,             _______, _______,
                                             _______, _______,             _______, _______
     ),
 
-    [_RAISE] = LAYOUT_5x6(
+    [_RAISE] = LAYOUT_ortho5x6(
         _______, QK_BOOT,   _______, _______, _______, KC_LBRC,             KC_RBRC, _______, KC_NLCK, KC_INS,  KC_SLCK, KC_MUTE,
         _______, KC_LEFT, KC_UP  , KC_DOWN, KC_RGHT, KC_LPRN,             KC_RPRN, KC_MPRV, KC_MPLY, KC_MNXT, _______, KC_VOLU,
         _______, _______, _______, _______, _______, _______,             _______, _______, _______, _______, _______, KC_VOLD,
-                          _______, _______,                                                 KC_EQL,  _______,
-                                            _______, _______,             _______, _______,
+                          _______, _______,  _______, _______,                               KC_EQL,  _______,
                                             _______, _______,             _______, _______,
                                             _______, _______,             _______, _______
     )
