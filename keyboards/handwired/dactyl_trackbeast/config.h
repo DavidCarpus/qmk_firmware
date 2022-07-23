@@ -58,4 +58,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #define RGBLED_NUM 12    // Number of LEDs
 
 
-#define PMW3360_CS_PINS { B5, B6 }
+#define PMW3360_CS_PIN F7
+#define SPLIT_POINTING_ENABLE
+#define POINTING_DEVICE_RIGHT
