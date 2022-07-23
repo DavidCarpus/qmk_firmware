@@ -36,9 +36,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * +------+------+------+------+-------------+                             +-------------+------+------+------+------+
      *               |  [   |   ]  | RAISE| SPC  |                                           | PLUS | EQL  |
      *               +-------------+-------------+                             +-------------+-------------+
-     *                             |  GRV | HOME |                             | END  | DEL  |
+     *                             |  GRV | HOME |                             | LGUI | DEL  |
      *                             |------+------|                             |------+------|
-     *                             | BACK | TAB  |                             | LGUI | LALT |
+     *                             | BACK | TAB  |                             | END  | LALT |
      *                             +-------------+                             +-------------+
      */
     [_BASE] = LAYOUT_ortho5x6(

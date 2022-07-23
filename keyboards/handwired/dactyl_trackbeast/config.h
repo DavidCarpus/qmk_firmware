@@ -38,13 +38,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define DEVICE_VER      0x0001
 //#define MANUFACTURER    tshort
 
-/* mouse config */
-#define MOUSEKEY_INTERVAL       20
-#define MOUSEKEY_DELAY          0
-#define MOUSEKEY_TIME_TO_MAX    60
-#define MOUSEKEY_MAX_SPEED      7
-#define MOUSEKEY_WHEEL_DELAY 0
-
 /* Set 0 if debouncing isn't needed */
 #define DEBOUNCE 5
 
@@ -60,22 +53,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define PERMISSIVE_HOLD
 
 /* ws2812 RGB LED */
-#define RGB_DI_PIN D3
+// #define RGB_DI_PIN D3
 
-#define RGBLED_NUM 12    // Number of LEDs
+// #define RGBLED_NUM 12    // Number of LEDs
 
-/*
- * Feature disable options
- *  These options are also useful to firmware size reduction.
- */
 
-/* disable debug print */
-// #define NO_DEBUG
-
-/* disable print */
-// #define NO_PRINT
-
-/* disable action features */
-//#define NO_ACTION_LAYER
-//#define NO_ACTION_TAPPING
-//#define NO_ACTION_ONESHOT
+#define PMW3360_CS_PINS { B5, B6 }
