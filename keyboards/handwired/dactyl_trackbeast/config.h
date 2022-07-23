@@ -61,3 +61,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define PMW3360_CS_PIN F7
 #define SPLIT_POINTING_ENABLE
 #define POINTING_DEVICE_RIGHT
+#define PMW3360_CLOCK_SPEED	1000000
+// #define ROTATIONAL_TRANSFORM_ANGLE 90
+#define POINTING_DEVICE_INVERT_X
