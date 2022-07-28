@@ -91,7 +91,6 @@ bool oled_task_user(void) {
     render_logo();
     return false;
 }
-
 #endif
 
 void keyboard_post_init_user(void) {
