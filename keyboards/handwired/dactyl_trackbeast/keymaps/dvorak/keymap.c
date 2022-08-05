@@ -23,51 +23,40 @@
 #define RAISE MO(_RAISE)
 #define LOWER MO(_LOWER)
 
+
+#define _LAYER0 0
+#define _LAYER1 1
+#define _LAYER2 2
+
 // Thelios: /home/dcarpus/Code/home/Keyboard/qmk_firmware/keyboards/handwired/dactyl_manuform/5x7/keymaps/left/keymap.c
+ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
-const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    /* Base (dvorak)
-     * +-----------------------------------------+                             +-----------------------------------------+
-     * | ESC  |   '  |   ,  |   .  |   p  |   y  |                             |   f  |   g  |   c  |   r  |   l  |      |
-     * |------+------+------+------+------+------|                             |------+------+------+------+------+------|
-     * | TAB  |   a  |   o  |   e  |   u  |   i  |                             |   d  |   h  |   t  |   n  |   s  |      |
-     * |------+------+------+------+------+------|                             |------+------+------+------+------+------|
-     * | SHFT |   z  |   x  |   c  |   v  |   b  |                             |   b  |   m  |   w  |   v  |   z  | SHFT |
-     * +------+------+------+------+-------------+                             +-------------+------+------+------+------+
-     *               |  [   |   ]  | RAISE| SPC  |                                           | PLUS | EQL  |
-     *               +-------------+-------------+                             +-------------+-------------+
-     *                             |  GRV | HOME |                             | LGUI | DEL  |
-     *                             |------+------|                             |------+------|
-     *                             | BACK | TAB  |                             | END  | LALT |
-     *                             +-------------+                             +-------------+
-     */
-    [_BASE] = LAYOUT_ortho5x6(
-        KC_ESC,  KC_QUOTE, KC_COMM, KC_DOT,  KC_P,    KC_Y,               KC_F,    KC_G,    KC_C,    KC_R,   KC_L,  KC_MINS,
-        KC_TAB,  KC_A,     KC_O,    KC_E,    KC_U,    KC_I,               KC_D,    KC_H,    KC_T,    KC_N,   KC_S,  KC_QUOT,
-        KC_LSFT, KC_Z,     KC_X,    KC_C,    KC_V,    KC_B,               KC_B,    KC_M,    KC_W,    KC_V,   KC_Z,  KC_BSLS,
-                           KC_LBRC, KC_RBRC, RAISE,   KC_SPC,                               KC_PLUS, KC_EQL,
-                                            KC_GRV,  KC_HOME,             KC_LGUI,  KC_DEL,
-                                            KC_BSPC, KC_TAB,              KC_END, KC_LALT
+ [_LAYER0] = LAYOUT(
+    KC_ESC, KC_QUOT, KC_COMM, KC_DOT, KC_P, KC_Y,                   KC_F, KC_G, KC_C, KC_R, KC_L, KC_MINS, 
+    KC_TAB, KC_A, KC_O, KC_E, KC_U, KC_I,                           KC_D, KC_H, KC_T, KC_N, KC_S, KC_QUOT, 
+    TO(1), KC_SCLN, KC_Q, KC_J, KC_K, KC_X,                         KC_B, KC_M, KC_W, KC_V, KC_Z, KC_BSLS, 
+            LCTL_T(KC_LCBR), LALT_T(KC_RCBR), TO(2), KC_LSPO,                  RCTL_T(KC_LPRN), RALT_T(KC_RPRN), 
+                    KC_TAB, LCTL(KC_S),                         KC_SPC,  KC_SFTENT, 
+                    KC_BSPC, KC_DEL,                        TO(1), KC_DEL
     ),
-
-    [_LOWER] = LAYOUT_ortho5x6(
-        _______, _______, _______, _______, _______, KC_LBRC,             KC_RBRC, KC_P7,   KC_P8,   KC_P9,   QK_BOOT,   KC_PLUS,
-        _______, KC_HOME, KC_PGUP, KC_PGDN, KC_END , KC_LPRN,             KC_RPRN, KC_P4,   KC_P5,   KC_P6,   KC_MINS, KC_PIPE,
-        _______, _______, _______, _______, _______, _______,             _______, KC_P1,   KC_P2,   KC_P3,   KC_EQL,  KC_UNDS,
-                          _______, KC_PSCR, _______, _______,                               _______, KC_P0,
-                                            _______, _______,             _______, _______,
-                                            _______, _______,             _______, _______
+[_LAYER1] = LAYOUT(
+    KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6,                       KC_RBRC, KC_5, KC_8, KC_9, QK_BOOT, KC_PLUS, 
+    KC_F7, KC_F8, KC_F9, KC_F10, KC_F11, KC_F12,                    KC_MINS, KC_4, KC_5, KC_6, KC_MINS, KC_PIPE, 
+    TO(2), KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, KC_TRNS,               KC_EQL, KC_1, KC_2, KC_3, KC_EQL, KC_UNDS, 
+            LCTL(KC_D), KC_PSCR, KC_MS_BTN1, KC_BTN3,                                KC_0, KC_TRNS,
+                            KC_UP, KC_PGUP,                     LCTL(KC_X),LCTL(KC_C) ,
+                            KC_DOWN, KC_PGDN,          TO(2), LCTL(KC_V)
     ),
-
-    [_RAISE] = LAYOUT_ortho5x6(
-        _______, QK_BOOT,   _______, _______, _______, KC_LBRC,             KC_RBRC, _______, KC_NLCK, KC_INS,  KC_SLCK, KC_MUTE,
-        _______, KC_LEFT, KC_UP  , KC_DOWN, KC_RGHT, KC_LPRN,             KC_RPRN, KC_MPRV, KC_MPLY, KC_MNXT, _______, KC_VOLU,
-        _______, _______, _______, _______, _______, _______,             _______, _______, _______, _______, _______, KC_VOLD,
-                          _______, _______,  _______, _______,                               KC_EQL,  _______,
-                                            _______, _______,             _______, _______,
-                                            _______, _______,             _______, _______
+[_LAYER2] = LAYOUT(
+    KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6,               KC_F7, KC_F8, KC_F9, KC_F10, KC_F11, KC_F12, 
+    KC_TRNS, KC_LEFT, KC_UP, KC_DOWN, KC_RGHT, KC_LPRN,     KC_RPRN, KC_MPRV, KC_MPLY, KC_MNXT, KC_TRNS, KC_VOLU,
+    TO(0), KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_VOLD, 
+           KC_TRNS, KC_TRNS, KC_TRNS, QK_BOOT, /*QK_BOOT*/                    KC_EQL, KC_MUTE, 
+                            KC_TRNS, KC_TRNS,                     KC_TRNS, QK_BOOT, /*QK_BOOT*/
+                            KC_TRNS, KC_TRNS,           TO(0), KC_TRNS
     )
 };
+
 
 void persistent_default_layer_set(uint16_t default_layer) {
     eeconfig_update_default_layer(default_layer);
@@ -82,16 +71,32 @@ static void render_logo(void) {
         0xA0, 0xA1, 0xA2, 0xA3, 0xA4, 0xA5, 0xA6, 0xA7, 0xA8, 0xA9, 0xAA, 0xAB, 0xAC, 0xAD, 0xAE, 0xAF, 0xB0, 0xB1, 0xB2, 0xB3, 0xB4,
         0xC0, 0xC1, 0xC2, 0xC3, 0xC4, 0xC5, 0xC6, 0xC7, 0xC8, 0xC9, 0xCA, 0xCB, 0xCC, 0xCD, 0xCE, 0xCF, 0xD0, 0xD1, 0xD2, 0xD3, 0xD4, 0x00
     };
-    dprint("Render logo");
+    // dprint("Render logo");
     oled_write_P(qmk_logo, false);
+
 }
 
 bool oled_task_user(void) {
     print("oled_task_user");
     render_logo();
+
+    switch (get_highest_layer(layer_state)) {
+        case _LAYER0:
+            oled_write_ln_P(PSTR("_LAYER0"), false);
+            break;
+        case _LAYER1:
+            oled_write_ln_P(PSTR("_LAYER1"), false);
+            break;
+        case _LAYER2:
+            oled_write_ln_P(PSTR("_LAYER2"), false);
+            break;
+        default:
+            oled_write_ln_P(PSTR("Undefined"), false);
+    }
     return false;
 }
 #endif
+
 
 void keyboard_post_init_user(void) {
   // Customise these values to desired behaviour
@@ -99,4 +104,7 @@ void keyboard_post_init_user(void) {
   debug_matrix=false;
   debug_keyboard=false;
   debug_mouse=false;
+    #ifdef POINTING_DEVICE_ENABLE
+        pointing_device_set_cpi(800);  // applies to both sensors
+    #endif
 }
