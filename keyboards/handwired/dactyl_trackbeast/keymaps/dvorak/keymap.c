@@ -29,10 +29,10 @@
 
  [_LAYER0] = LAYOUT(
     KC_ESC, KC_QUOT, KC_COMM, KC_DOT, KC_P, KC_Y,                   KC_F, KC_G, KC_C, KC_R, KC_L, KC_MINS,
-    KC_TAB, KC_A, KC_O, KC_E, KC_U, KC_I,                           KC_D, KC_H, KC_T, KC_N, KC_S, KC_QUOT,
+    KC_TAB, KC_A, KC_O, KC_E, KC_U, KC_I,                           KC_D, KC_H, KC_T, KC_N, KC_S, KC_SLSH,
     TT(1), KC_SCLN, KC_Q, KC_J, KC_K, KC_X,                         KC_B, KC_M, KC_W, KC_V, KC_Z, KC_BSLS,
             LCTL_T(KC_LCBR), LALT_T(KC_RCBR), KC_MS_BTN1,KC_MS_BTN3 ,                  RCTL_T(KC_LPRN), RALT_T(KC_RPRN),
-                    LCTL(KC_S), KC_LGUI,                          KC_SPC,  KC_SFTENT,
+                    LCTL(KC_S), KC_LGUI,                          KC_SFTENT ,  KC_SPC,
                     KC_BSPC, KC_DEL,                        TT(1), KC_DEL
     ),
 [_LAYER1] = LAYOUT(
