@@ -1,39 +1,25 @@
 #include QMK_KEYBOARD_H
 #include "config.h"
 
-// #define SFT_ESC  SFT_T(KC_ESC)
-// #define CTL_BSPC CTL_T(KC_BSPC)
-// #define ALT_SPC  ALT_T(KC_SPC)
-// #define SFT_ENT  SFT_T(KC_ENT)
-// #define SFT_DOT  SFT_T(KC_DOT)
-// #define SFT_SEMI  SFT_T(KC_SEMICOLON)
-
-
 #define KC_ML KC_MS_LEFT
 #define KC_MR KC_MS_RIGHT
-// #define KC_MU KC_MS_UP
-// #define KC_MD KC_MS_DOWN
+
 #define KC_MB1 KC_MS_BTN1
 #define KC_MB2 KC_MS_BTN1
-
-// #define RAISE MO(_RAISE)
-// #define LOWER MO(_LOWER)
-
 
 #define _LAYER0 0
 #define _LAYER1 1
 #define _LAYER2 2
 
-// Thelios: /home/dcarpus/Code/home/Keyboard/qmk_firmware/keyboards/handwired/dactyl_manuform/5x7/keymaps/left/keymap.c
- const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
  [_LAYER0] = LAYOUT(
-    KC_ESC, KC_QUOT, KC_COMM, KC_DOT, KC_P, KC_Y,                   KC_F, KC_G, KC_C, KC_R, KC_L, KC_MINS,
-    KC_TAB, KC_A, KC_O, KC_E, KC_U, KC_I,                           KC_D, KC_H, KC_T, KC_N, KC_S, KC_SLSH,
-    TT(1), KC_SCLN, KC_Q, KC_J, KC_K, KC_X,                         KC_B, KC_M, KC_W, KC_V, KC_Z, KC_BSLS,
+    KC_ESC, KC_QUOT, KC_COMM, KC_DOT, KC_P, KC_Y,                       KC_F, KC_G, KC_C, KC_R, KC_L, KC_MINS,
+    KC_TAB, KC_A, KC_O, KC_E, KC_U, KC_I,                               KC_D, KC_H, KC_T, KC_N, KC_S, KC_SLSH,
+    TT(1), KC_SCLN, KC_Q, KC_J, KC_K, KC_X,                             KC_B, KC_M, KC_W, KC_V, KC_Z, KC_BSLS,
             LCTL_T(KC_LCBR), LALT_T(KC_RCBR), KC_MS_BTN1,KC_MS_BTN3 ,                  RCTL_T(KC_LPRN), RALT_T(KC_RPRN),
-                    LCTL(KC_S), KC_LGUI,                          KC_SFTENT ,  KC_SPC,
-                    KC_BSPC, KC_DEL,                        TT(1), KC_DEL
+                    LCTL(KC_S),  KC_LGUI ,                                KC_SFTENT ,  KC_SPC,
+                    KC_BSPC  , KC_DEL  ,                                  TT(1), KC_BSPC
     ),
 [_LAYER1] = LAYOUT(
     KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6,                       KC_RBRC, KC_5, KC_8, KC_9,KC_RSFT , KC_PLUS,
